@@ -1,5 +1,9 @@
-Sample App deployment
-Copy the deploy.yml to your local and save it with name deploy.yml
+
+# Sample App deployment
+
+## Copy the deploy.yml to your local and save it with name deploy.yml
+
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -35,9 +39,18 @@ spec:
         imagePullPolicy: IfNotPresent
       nodeSelector:
         kubernetes.io/os: linux
-Deploy the app
+```
+
+## Deploy the app
+
+```
 kubectl apply -f deploy.yaml
-Copy the below file as service.yml
+```
+
+
+## Copy the below file as service.yml
+
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -51,5 +64,10 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-Deploy the service
+```
+
+## Deploy the service
+
+```
 kubectl apply -f service.yaml
+```
